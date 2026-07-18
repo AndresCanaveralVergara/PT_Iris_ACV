@@ -11,8 +11,6 @@
     "ConnectionCore": "cl00777-datamesh-core-pdn-gl-conn",
     "DatabaseName": "cl00777_datamesh_trusted",
     "AwsDataCatalog": "AwsDataCatalog",
-    "JdbcAthena": "com.simba.athena.jdbc.Driver",
-    "S3OutputPath": "s3://aws-athena-query-results-us-east-1-000000000000/",
 
     "WorkflowNameColoc": "Ingestion-COLOC-Workflow",
     "TableNameColoc": "colocaciones",
