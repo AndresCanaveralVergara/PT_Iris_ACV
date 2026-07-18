@@ -226,7 +226,7 @@ Resources:
     Properties:
       Name: !Sub '${ProjectCode}-${ProjectName}-${TableNameColoc}-Trigger-${Environment}'
       Description: 'Trigger diario de colocaciones'
-      Type: ON_DEMAND
+      Type: SCHEDULED
       Schedule: cron(00 10 * * ? *)
       StartOnCreation: true
       Actions:
