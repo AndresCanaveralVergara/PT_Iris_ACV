@@ -190,7 +190,7 @@ Resources:
       Tags:
         fdr:general:project-code: !Ref ProjectCode
         fdr:general:project-name: !Ref ProjectName
-        fdr:general:enviroment: !Ref Environment
+        fdr:general:environment: !Ref Environment
 
   GlueJobColoc:
     Type: AWS::Glue::Job
