@@ -149,16 +149,27 @@ Resources:
             Statement:
               - Effect: Allow
                 Action:
-                  - glue:*
                   - s3:GetObject
                   - s3:PutObject
                   - s3:ListBucket
                   - s3:DeleteObject
+                Resource:
+                  - !Sub 'arn:aws:s3:::${S3BucketTemp}'
+                  - !Sub 'arn:aws:s3:::${S3BucketTemp}/*'
+                  - !Sub 'arn:aws:s3:::${S3BucketCode}'
+                  - !Sub 'arn:aws:s3:::${S3BucketCode}/*'
+                  - !Sub 'arn:aws:s3:::${TablePathS3Coloc}'
+              - Effect: Allow
+                Action:
                   - secretsmanager:GetSecretValue
                   - secretsmanager:DescribeSecret
-                  - logs:*
-                  - cloudwatch:*
-                Resource: '*'
+                Resource: !Ref SecretArn
+              - Effect: Allow
+                Action:
+                  - logs:CreateLogGroup
+                  - logs:CreateLogStream
+                  - logs:PutLogEvents
+                Resource: !Sub 'arn:aws:logs:*:${AWS::AccountId}:log-group:/aws-glue/*'
 
   ############### COLOC (colocaciones) ###############
 
