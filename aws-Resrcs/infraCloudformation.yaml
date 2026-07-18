@@ -88,14 +88,6 @@ Parameters:
     Type: String
     Description: Catalogo de datos de AWS
     Default: AwsDataCatalog
-  JdbcAthena:
-    Type: String
-    Description: Driver JDBC de Athena
-    Default: com.simba.athena.jdbc.Driver
-  S3OutputPath:
-    Type: String
-    Description: Ruta de resultados de Athena
-    Default: !Sub 's3://aws-athena-query-results-us-east-1-${AWS::AccountId}/'
 
   ############## Colocaciones (COLOC) ##############
   WorkflowNameColoc:
