@@ -7,7 +7,7 @@
     "S3BucketTemp": "aws-glue-assets-000000000000-us-east-1/temporary",
     "S3BucketCode": "cl00777-datamesh-gluescripts-pdn-s3",
     "SecretRegion": "us-east-1",
-    "SecretArn": "CL00053-SecureMngmt-CL00777Core-DEV-Secrets",
+    "SecretArn": "arn:aws:secretsmanager:us-east-1:123456789012:secret:CL00053-SecureMngmt-CL00777Core-PDN-Secrets-AbCdEf",
     "ConnectionCore": "cl00777-datamesh-core-pdn-gl-conn",
     "DatabaseName": "cl00777_datamesh_trusted",
     "AwsDataCatalog": "AwsDataCatalog",
