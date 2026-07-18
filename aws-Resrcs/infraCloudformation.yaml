@@ -223,7 +223,7 @@ Resources:
       Schedule: cron(00 10 * * ? *)
       StartOnCreation: true
       Actions:
-        - JobName: !Ref GlueJobColocaciones
+        - JobName: !Ref GlueJobColoc  
       WorkflowName: !Ref GlueWorkflowColoc
       Tags:
         fdr:general:project-code: !Ref ProjectCode
