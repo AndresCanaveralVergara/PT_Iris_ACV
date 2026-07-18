@@ -170,8 +170,6 @@ Resources:
       DefaultRunProperties:
         secret_region: !Sub '${SecretRegion}'
         secret_arn: !Sub '${SecretArn}'
-        db_user: 'admin'
-        db_password: 'Andes2024!'
         ingestion_type: !Sub '${IngestionTypeColoc}'
         database_name: !Sub '${DatabaseName}'
         table_name: !Sub '${TableNameColoc}'
