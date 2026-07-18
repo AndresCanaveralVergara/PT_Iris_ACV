@@ -63,7 +63,7 @@ Parameters:
   S3BucketTemp:
     Type: String
     Description: Bucket temporal de Glue
-    Default: aws-glue-assets-000000000000-us-east-1/temporary
+    Default: !Sub 'aws-glue-assets-${AWS::AccountId}-us-east-1/temporary'
   S3BucketCode:
     Type: String
     Description: Bucket donde se almacenan los scripts de Glue
