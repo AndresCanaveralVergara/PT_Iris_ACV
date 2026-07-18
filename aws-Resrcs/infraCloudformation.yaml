@@ -75,7 +75,7 @@ Parameters:
   SecretArn:
     Type: String
     Description: Nombre/ARN del secreto con las credenciales del core transaccional
-    Default: CL00053-SecureMngmt-CL00777Core-PDN-Secrets
+    Default: !Sub 'arn:aws:secretsmanager:${SecretRegion}:${AWS::AccountId}:secret:CL00053-SecureMngmt-CL00777Core-PDN-Secrets'
   ConnectionCore:
     Type: String
     Description: Conexion Glue al core transaccional
