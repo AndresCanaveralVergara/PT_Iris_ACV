@@ -185,7 +185,7 @@ Resources:
         fdr:general:enviroment: !Ref Environment
 
   GlueJobColoc:
-    Type: AWS::Glue::Jobb
+    Type: AWS::Glue::Job
     Properties:
       Name: !Sub '${ProjectCode}-${ProjectName}-Trusted-${TableNameColoc}-${Environment}'
       Description: 'Job trusted de colocaciones'
