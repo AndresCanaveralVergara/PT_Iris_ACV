@@ -95,7 +95,7 @@ Parameters:
   S3OutputPath:
     Type: String
     Description: Ruta de resultados de Athena
-    Default: s3://aws-athena-query-results-us-east-1-000000000000/
+    Default: !Sub 's3://aws-athena-query-results-us-east-1-${AWS::AccountId}/'
 
   ############## Colocaciones (COLOC) ##############
   WorkflowNameColoc:
