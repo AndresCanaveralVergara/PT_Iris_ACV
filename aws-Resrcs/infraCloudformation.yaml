@@ -198,7 +198,7 @@ Resources:
       ExecutionProperty:
         MaxConcurrentRuns: 1
       WorkerType: G.1X
-      NumberOfWorkers: 10
+      NumberOfWorkers: 2
       DefaultArguments:
         --job-language: python
         --TempDir: !Sub 's3://${S3BucketTemp}/'
