@@ -41,3 +41,12 @@ La usé principalmente para acelerar el diagnóstico técnico y evitar atascrme 
 
 4. Un ejemplo de algo que la IA me dio y tuve que corregir o verificar.
 Al normalizar el campo segmento del job de PySpark, la primera propuesta de la IA fue usar la función initcap() para unificar mayúsculas y minúsculas (por ejemplo, pasar "premium" a "Premium"). Al ejecutarlo, me di cuenta de que el segmento "PYME" (una sigla) quedaba mal transformado como "Pyme" en lugar de "PYME", lo que habría vuelto a generar el mismo bug original de segmentos que no coinciden con la lista esperada. Lo noté al revisar el show() del DataFrame después de aplicar la normalización y comparar visualmente contra los valores originales del CSV. La corrección fue reemplazar initcap() por un mapeo explícito de los 4 valores válidos del negocio, comparando siempre en mayúsculas.
+
+A continuación, se explica el desarrollo del "Módulo 3. Spark (PySpark)".
+
+El bloque original recorre mes por mes con un while mal construido. Se va a reemplazar por una única agregación de Spark (más simple, más rápido, sin riesgo de loop). 
+En este punto, se hacen estos pasos:
+* Corrección de bucle infinito, con una única agregación de Spark. En lugar de 12 pasadas separadas sobre el DataFrame (una por mes, con el riesgo del bucle mal hecho), esto hace una sola pasada con groupBy, y muestra solo los meses que sí tienen datos: se reemplaza ese bloque del while por este groupBy, dejando el resto del script igual.
+* Exclusión de transacciones sin sentido, donde se identifican montos, formatos, monedas, filas duplicadas y casteos incoherentes. Se usa regexp_replace para eliminar esos caracteres antes del cast. Se normaliza la moneda y el segmento pasando tanto a inicial mayúscula como a mayúsculas.
+* Se eliminan duplicados y se aplica TRM real desde trm.json.
+* Esto, queda en un ipynb, PT_Iris_ACV.ipynb.
