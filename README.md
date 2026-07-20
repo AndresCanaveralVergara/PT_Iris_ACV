@@ -49,4 +49,4 @@ En este punto, se hacen estos pasos:
 * Corrección de bucle infinito, con una única agregación de Spark. En lugar de 12 pasadas separadas sobre el DataFrame (una por mes, con el riesgo del bucle mal hecho), esto hace una sola pasada con groupBy, y muestra solo los meses que sí tienen datos: se reemplaza ese bloque del while por este groupBy, dejando el resto del script igual.
 * Exclusión de transacciones sin sentido, donde se identifican montos, formatos, monedas, filas duplicadas y casteos incoherentes. Se usa regexp_replace para eliminar esos caracteres antes del cast. Se normaliza la moneda y el segmento pasando tanto a inicial mayúscula como a mayúsculas.
 * Se eliminan duplicados y se aplica TRM real desde trm.json.
-* Esto, queda en un ipynb, PT_Iris_ACV.ipynb.
+* Esto, queda en un ipynb, PT_Iris_ACV_VF.ipynb.
