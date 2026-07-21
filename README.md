@@ -50,3 +50,5 @@ En este punto, se hacen estos pasos:
 * Exclusión de transacciones sin sentido, donde se identifican montos, formatos, monedas, filas duplicadas y casteos incoherentes. Se usa regexp_replace para eliminar esos caracteres antes del cast. Se normaliza la moneda y el segmento pasando tanto a inicial mayúscula como a mayúsculas.
 * Se eliminan duplicados y se aplica TRM real desde trm.json.
 * Esto, queda en un ipynb, PT_Iris_ACV_VF.ipynb.
+
+* NOTA DE CIERRE: se crea carpeta "Final" con los 4 archivos de la prueba en su versión final (del módulo de SQL y del módulo de Spark/PySpark).
